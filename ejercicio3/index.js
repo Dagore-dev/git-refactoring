@@ -1,40 +1,41 @@
-const a = document.getElementById('form')
-const b = document.getElementById('n1')
-const c = document.getElementById('n2')
-const d = document.getElementById('operation')
-const e = document.getElementById('result')
+function f() 
+{
+  // Formulario
+  const operation = document.getElementById('operation').value
 
-function f ( e ) {
-  e.preventDefault()
-  
-  var n1 = b.value
-  var n2 = c.value
-  var operation = d.value
-  var r
+  // Valores
+  let n1 = parseFloat(document.getElementById('n1').value), n2 = parseFloat(document.getElementById('n2').value), r=0
 
-  a.reset()
+  if((n1 || n1==0) && (n1 || n1==0))
+  {
+    switch(operation)
+  {
+    case '+':
+    r = n1 + n2
+    break;
+     
+    case '-':
+    r = n1 - n2
+    break;
 
-  if ((n1 || n1 == 0) && (n2 || n2 == 0) && operation) {
-    if (operation == '+') {
-      r = n1 + n2
-    }
-    else if (operation == '-') {
-      r = n1 - n2
-    }
-    else if (operation == '*') {
-      r = n1 * n2
-    }
-    else {
-      r = n1 / n2
-    }
+    case '*':
+    r = n1 * n2
+    break;
+    
+    case '/':
+    r = n1 / n2
+    break; 
   }
-  else {
-    alert('Falta algún valor por definir')
+  }
+  else
+  {
+    r = 0;
   }
 
-  e.innerText = r
-
+  document.getElementById('result').innerText = r
 }
 
-a.addEventListener('submit', f)
-a.addEventListener('reset', () => e.innerText = 'Esperando operación.')
+function reiniciar()
+{
+  location.reload()
+}
