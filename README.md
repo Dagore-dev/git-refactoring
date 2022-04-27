@@ -7,6 +7,11 @@ Actualización de la tabla con la identificación del nombre del alumno y su Git
 -
 ## Ejercicio 1
 Informe variado sobre un array.
+
+Modificación del tipo de variable, cambiando var y let por const en la medida de lo posible.
+Se han separado un poco los case para que el código sea un poco más limpio y legible
+La variable media se crea más adelante cuando las otras dos variables que utiliza tienen datos
+
 ## Ejercicio 2
 Ordena un array de objetos en base a dos criterios y muestra antes y después del array.
 ## Ejercicio 3

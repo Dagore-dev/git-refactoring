@@ -1,43 +1,40 @@
-var valores = [true, 5, false, 'hola', 'adios', 2, true]
-let actual
-let length = 0
-let maxLengthIndex = 'No hay cadenas de texto'
-let suma = 0
-let resta = 0
-let cuenta = 0
-let media = 0
-let maximo = Number.MIN_VALUE
-let minimo = Number.MAX_VALUE
-let booleans = []
+const valores = [true, 5, false, 'hola', 'adios', 2, true]
+const maxLengthIndex = 'No hay cadenas de texto'
+const suma = 0, resta = 0, cuenta = 0
+const maximo = Number.MIN_VALUE
+const minimo = Number.MAX_VALUE
+const booleans = []
 let and
 let or
 const $RESULTADO = document.getElementById('result')
 
-for (let i = 0; i < valores.length; i++) {
+for (const i = 0; i < valores.length; i++) {
 
-  actual = valores[i]
+  switch (typeof valores[i]) {
 
-  switch (typeof actual) {
     case 'string':
-      if (actual.length >= length) maxLengthIndex = i
+      if (valores[i].length >= 0) maxLengthIndex = i
       break;
+
     case 'number':
       cuenta++
-      suma += actual
-      resta -= actual
-      if(actual > maximo) maximo = actual
-      if(actual < minimo) minimo = actual
+      suma += valores[i]
+      resta -= valores[i]
+      if(valores[i] > maximo) maximo = valores[i]
+      if(valores[i] < minimo) minimo = valores[i]
       break;
+
     case 'boolean':
-      booleans.push(actual)
+      booleans.push(valores[i])
       break;
+
     default:
       break;
   }
 
 }
 
-media = suma / cuenta
+const media = suma / cuenta
 and = booleans.reduce((previous, current) => previous && current, true)
 or = booleans.reduce((previous, current) => previous || current, false)
 
