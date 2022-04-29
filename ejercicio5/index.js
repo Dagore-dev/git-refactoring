@@ -1,22 +1,22 @@
-function MayusculasAlternas (s)
+function MayusculasAlternas (cadena)
 {
-    var splitted = s.toLowerCase().split(' ');
+    cadena = cadena.toLowerCase().split(' ');
 
-    for (let i = 0; i < splitted.length; i++)
+    for (let i = 0; i < cadena.length; i++)
     {
-        var n = ''
+        var aux = ''
 
-        for (let j = 0; j < splitted[i].length; j++) {
+        for (let j = 0; j < cadena[i].length; j++) {
           if (j % 2 == 0) {
-            n += splitted[i][j].toUpperCase()
+            aux += cadena[i][j].toUpperCase()
           }
           else {
-            n += splitted[i][j]
+            aux += cadena[i][j]
           }
         }
 
-        splitted[i] = n
+        cadena[i] = aux
     }
 
-    console.log(splitted.join(' '))
+    console.log(cadena.join(' '))
 }
