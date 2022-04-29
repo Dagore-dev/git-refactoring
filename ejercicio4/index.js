@@ -1,21 +1,21 @@
-function ConsonantesSeguidas (s)
+function ConsonantesSeguidas (textoriginal)
 {
-  console.log(s)  
-  var sample = s.toLowerCase()
-    var consonantes = 'bcdfghjklmnñpqrstvwxyz'
-    var result = false
+  console.log(textoriginal)  
+  let texto = textoriginal.toLowerCase()
+    const consonantes = 'bcdfghjklmnñpqrstvwxyz'
+    let resultado = false
 
-    if (sample.length > 1)
+    if (texto.length > 1)
     {
-        for (var i = 0; i < sample.length - 1; i++)
+        for (let i = 0; i < texto.length - 1; i++)
         { 
-            if (consonantes.includes(sample[i]) && consonantes.includes(sample[i + 1]))
+            if (consonantes.includes(texto[i]) && consonantes.includes(texto[i + 1]))
             {
-                result = true
-                i = sample.length
+                resultado = true
+                i = texto.length
             }
         }
     }
 
-    console.log(result)
+    console.log(resultado)
 }
